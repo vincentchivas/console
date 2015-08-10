@@ -8,6 +8,11 @@ def index():
     return render_template('hello.html')
 
 
+@app.route('/webfront/hello1', methods=['GET', ])
+def index1():
+    return render_template('hello1.htm')
+
+
 @app.route('/webfront/themelocale', methods=['GET', ])
 def show_theme():
     return render_template('themelocale/add.htm')
