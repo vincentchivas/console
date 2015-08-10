@@ -63,14 +63,16 @@ def build_unqiue_cond(modelname, save_dict):
         # {"$or": [{"a":"xx"}, "$and":[{"b":"yy"}, {"c": "zz"}]]}
         or_cond = []
         for u in unique:
-            if not isinstance(u, str):
+            if not isinstance(u, str) and not isinstance(u, unicode):
                 and_cond = []
                 for ui in u:
                     if save_dict.get(ui):
                         and_cond.append({ui: save_dict[ui]})
+                        or_cond.append(and_cond)
             else:
                 if save_dict.get(u):
                     or_cond.append({u: save_dict[u]})
+        cond['$or'] = or_cond
     else:
         one = unique[0]
         if not isinstance(one, str) and not isinstance(one, unicode):
@@ -78,6 +80,7 @@ def build_unqiue_cond(modelname, save_dict):
             for ui in one:
                 if save_dict.get(ui):
                     and_cond.append({ui: save_dict[ui]})
+            cond['$and'] = and_cond
         else:
             cond[one] = save_dict[one]
     return cond
@@ -97,13 +100,13 @@ def check_data_unique(appname, modelname, save_dict, item_id=None):
         item = ModelClass.find_one(appname, cond)
         if item:
             check_success = False
-            msg = "check unique fail"
+            msg = "insert before, check unique fail"
     else:
         item_old = ModelClass.find_one(appname, {'id': item_id})
         item_find = ModelClass.find_one(appname, cond)
         if item_find and not item_find == item_old:
             check_success = False
-            msg = "check unique fail"
+            msg = "update before, check unique fail"
     return check_success, msg
 
 
