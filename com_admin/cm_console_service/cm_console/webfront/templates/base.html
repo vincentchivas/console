@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
         {% include 'layouts/head.html' %}
+        {% block spec %}  {% endblock %}
 	</head>
 
 	<body>
@@ -64,5 +65,6 @@
 			</a>
 		</div><!-- /.main-container -->
         {% include 'layouts/footer.html' %}
+        {% block inline %}{% endblock %}
 </body>
 </html>

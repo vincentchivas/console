@@ -2,12 +2,15 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>登录页面</title>
+		<title>登录页面 - Bootstrap后台管理系统模版Ace下载</title>
+		<meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
+		<meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- basic styles -->
 
-        <link href="{{ url_for('static', filename='assets/css/bootstrap.min.css')}}" rel="stylesheet" />
-        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/font-awesome.min.css')}}"/>
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 
 		<!--[if IE 7]>
 		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
@@ -21,8 +24,8 @@
 
 		<!-- ace styles -->
 
-        <link href="{{ url_for('static', filename='assets/css/ace.min.css')}}" rel="stylesheet" />
-        <link href="{{ url_for('static', filename='assets/css/ace-rtl.min.css')}}" rel="stylesheet" />
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 
 		<!--[if lte IE 8]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
@@ -121,11 +124,17 @@
 
 										<div class="toolbar clearfix">
 											<div>
-                                                <a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link"><i class="icon-arrow-left"></i> I forgot my password</a>
+												<a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link">
+													<i class="icon-arrow-left"></i>
+													I forgot my password
+												</a>
 											</div>
 
 											<div>
-												<a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">I want to register <i class="icon-arrow-right"></i></a>
+												<a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">
+													I want to register
+													<i class="icon-arrow-right"></i>
+												</a>
 											</div>
 										</div>
 									</div><!-- /widget-body -->
@@ -268,8 +277,7 @@
 		<!--[if !IE]> -->
 
 		<script type="text/javascript">
-		    var src_url = "{{ url_for('static', filename='assets/js/jquery-2.0.3.min.js') }}";
-			window.jQuery || document.write("<script src=src_url>"+"<"+"/script>");
+			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
 		</script>
 
 		<!-- <![endif]-->
@@ -281,8 +289,7 @@
 <![endif]-->
 
 		<script type="text/javascript">
-            var load_js = "{{ url_for('static', filename='assets/js/jquery.mobile.custom.min.js')}}" 
-			if("ontouchend" in document) document.write("<script src=load_js>"+"<"+"/script>");
+			if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 		</script>
 
 		<!-- inline scripts related to this page -->
@@ -293,5 +300,6 @@
 			 jQuery('#'+id).addClass('visible');
 			}
 		</script>
+	<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 </body>
 </html>
