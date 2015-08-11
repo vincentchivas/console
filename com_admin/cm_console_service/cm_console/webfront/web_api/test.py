@@ -14,6 +14,11 @@ def show_theme():
     return render_template('themelocale/add.htm')
 
 
+@app.route('/webfront/themelocale.html', methods=['GET', ])
+def theme_list():
+    return render_template('themelocale.html')
+
+
 @app.route('/webfront/themelocale/viewdetial/<mid>', methods=['GET', ])
 def show_detail(mid):
     return render_template('themelocale/edit.htm', model_id=mid)
